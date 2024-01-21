@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+#headingCapsule{
+    border-radius: 116.5px;
+    background: #FFF;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.10);
+}
+
+#heading{
+    color: #000;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#moreEvents{
+    border-radius: 20px;
+    background: #FFF;
+}
+
+#seeMore{
+    color: #4178E3;
+    font-family: Inter;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+/* Default styles for larger screens */
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #eventList {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .event {
+    width: 45%; /* Adjust as needed */
+    margin: 10px;
+    display: flex;
+    flex-direction: column; /* Display image above description */
+    align-items: center;
+    text-align: center;
+  }
+  
+  .event img {
+    max-width: 100%; /* Ensure image doesn't exceed its container */
+  }
+  
+  /* Responsive styles for small screens */
+  @media only screen and (max-width: 600px) {
+    #header {
+      margin-left: 2vw;
+    }
+  .event img{
+    max-width: 10%;
+  }
+    .event {
+      width: 100%; /* Display each event on a new line */
+    }
+  }
+  
