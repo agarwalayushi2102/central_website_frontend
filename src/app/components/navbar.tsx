@@ -10,8 +10,8 @@ const navbar = () => {
         <p className='ml-4 text-center'> You are editing "{websiteName}" </p>
         
        
-        <a href='#' className='mr-4 text-[#1D2A6E] hover:underline ml-[50%]'>Discard changes and exit</a>
-        <a href='#' className='ml-4 text-[#1D2A6E] hover:underline mr-2'>Publish</a>
+        <a href='#' className='mr-4 text-[#1D2A6E] font-semibold hover:underline ml-[50%]'>Discard changes and exit</a>
+        <a href='#' className='ml-4 text-[#1D2A6E] font-semibold hover:underline mr-2'>Publish</a>
         
     </div>
   )
