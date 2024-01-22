@@ -19,7 +19,7 @@ const sidebar = () => {
       <div className="flex flex-col">
         <h1 className="text-2xl font-semibold pr-[0.7rem] mt-2 text-center">
           Home
-          <span>
+     
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -37,7 +37,7 @@ const sidebar = () => {
           </svg>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className={home2}>
   <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" onClick={handleChange2}/>
-</svg></span>
+</svg>
 
         </h1>
 
@@ -57,8 +57,8 @@ const sidebar = () => {
           </button>
 
 
-      <div className="">
-        <div className=" inline-flex flex-col text-xl font-semibold py-2  bg-[white]  ">
+      <div className="relative top-[243rem] w-full">
+        <div className=" flex flex-col text-xl font-semibold py-2  bg-[white]  ">
           <span className="ml-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
