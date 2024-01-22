@@ -4,7 +4,7 @@ import Style from './Event.module.css'
 import EventCard from './EventCard/EventCard'
 import EventDescription from './EventDescription/EventDescription'
 
-const Event = (props) => {
+const Event = (props:any) => {
   const event = props.event;
   const id = event.id;
   let flexDirection = 'flex-row';

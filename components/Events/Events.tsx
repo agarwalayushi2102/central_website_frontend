@@ -27,7 +27,7 @@ let events = [
 const Events = () => {
   return (
     <>
-      <div className="w-full bg-[#F6F6F6] my-10 py-16">
+      <div className="w-full bg-[#F6F6F6] py-16">
         <div id="header" className="ml-[5vw]">
           <div id={Style.headingCapsule} className="w-fit">
             <span id={Style.heading} className="mx-8 my-10">
@@ -45,7 +45,7 @@ const Events = () => {
         <div className="flex justify-center mt-16 mb-8">
           <div id={Style.moreEvents} className="py-4">
             <span id={Style.seeMore} className="mx-8">
-              See More Events ->
+              See More Events &rarr;
             </span>
           </div>
         </div>

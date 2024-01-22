@@ -1,16 +1,16 @@
 /* styles/HeroSection.module.css */
 .hero {
   position: relative;
-  margin-top: 120px;
-  margin-left: 5%;
-  margin-right: 5%;
-  height: 800px; /* Adjust the height as needed */
+  margin-top: 0rem;
+  /* margin-left: 5%;
+  margin-right: 5%; */
+  height: 40rem; /* Adjust the height as needed */
   background: url('/hero.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center; /* Center content horizontally */
   color: #fff; /* Adjust text color */
-  border-radius: 40px;
+  /* border-radius: 40px; */
 }
 
 .overlay {
