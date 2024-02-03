@@ -24,6 +24,7 @@ export default function Home() {
         <Template1/>
         <Template2/> */}
         <div className='col-span-4'>
+          <h1 className='text-3xl font-semibold pl-8 pt-4 bg-[#ECECEC]'>Preview</h1>
           <Preview/>
         </div>
       

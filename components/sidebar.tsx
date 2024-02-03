@@ -1,25 +1,24 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 const sidebar = () => {
-  const [home1,setHome1] = useState('inline w-6 h-6')
-  const [home2,setHome2] = useState('hidden')
+  const [home1, setHome1] = useState("inline w-6 h-6");
+  const [home2, setHome2] = useState("hidden");
 
-  function handleChange(){
-   setHome1('hidden')
-   setHome2('inline w-6 h-6')
+  function handleChange() {
+    setHome1("hidden");
+    setHome2("inline w-6 h-6");
   }
 
-  function handleChange2(){
-   setHome1('inline w-6 h-6')
-   setHome2('hidden')
+  function handleChange2() {
+    setHome1("inline w-6 h-6");
+    setHome2("hidden");
   }
   return (
-    <div className=" bg-[#F6F6F6] flex flex-col  bottom-0 border-r-2 h-[100%] ]">
+    <div className=" bg-[#F6F6F6] flex flex-col  bottom-0 border-r-2 h-[100%] ">
       <div className="flex flex-col">
         <h1 className="text-2xl font-semibold pr-[0.7rem] mt-2 text-center">
           Home
-     
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -35,31 +34,47 @@ const sidebar = () => {
               d="m19.5 8.25-7.5 7.5-7.5-7.5"
             />
           </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className={home2}>
-  <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" onClick={handleChange2}/>
-</svg>
-
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            className={home2}
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m4.5 15.75 7.5-7.5 7.5 7.5"
+              onClick={handleChange2}
+            />
+          </svg>
         </h1>
-
-          
-       
       </div>
 
-          <h2 className="text-xl mt-3 font-medium ml-2">1.Welcome Card</h2>
-          <img src="./Welcome Card.png" className="w-[95%] h-[9rem] rounded-lg mx-auto border-2"/>
-          <h2 className="text-xl mt-3 font-medium ml-2">2.Events</h2>
-          <img src="./events.png" className="w-[95%] h-[7rem] rounded-lg mx-auto border-2"/>
-          <h2 className="text-xl mt-3 font-medium ml-2">3.Members</h2>
-          <img src="./Members.png" className="w-[95%] h-[7rem] rounded-lg mx-auto border-2"/>
+      <h2 className="text-xl mt-3 font-medium ml-2">1.Welcome Card</h2>
+      <img
+        src="./Welcome Card.png"
+        className="w-[95%] h-[10rem] rounded-lg mx-auto border-2"
+      />
+      <h2 className="text-xl mt-3 font-medium ml-2">2.Events</h2>
+      <img
+        src="./events.png"
+        className="w-[95%] h-[8rem] rounded-lg mx-auto border-2"
+      />
+      <h2 className="text-xl mt-3 font-medium ml-2">3.Members</h2>
+      <img
+        src="./Members.png"
+        className="w-[95%] h-[8rem] rounded-lg mx-auto border-2"
+      />
 
-          <button className="w-[90%] h-[3.5rem] justify-center bg-[#5267D0] text-white text-xl font-medium mt-4 mx-auto rounded-2xl ">
-            <img src="./Group 57.svg" className=" mr-2"/> Add
-          </button>
+      <button className="w-[90%] h-[3.5rem] justify-center bg-[#5267D0] text-white text-xl font-medium mt-4 mx-auto rounded-2xl ">
+        <img src="/Icon (1).svg" className=" mr-2 inline mb-1" /> Add
+      </button>
 
-
-      <div className="relative top-[243rem] w-full">
-        <div className=" flex flex-col text-xl font-semibold py-2  bg-[white]  ">
-          <span className="ml-6">
+      <div className=" w-full relative top-[232rem] ">
+        <div className=" flex flex-col text-xl font-semibold pt-8 pb-14 bg-[white]  ">
+          <a href="#" className="ml-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -75,8 +90,8 @@ const sidebar = () => {
               />
             </svg>
             Edit color palatte
-          </span>
-          <span className="ml-6">
+          </a>
+          <a href="#" className="ml-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -97,7 +112,7 @@ const sidebar = () => {
               />
             </svg>
             More settings
-          </span>
+          </a>
         </div>
       </div>
 
