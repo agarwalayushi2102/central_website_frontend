@@ -1,0 +1,30 @@
+ /* Container holding the image and the text */
+ .container {
+    position: relative;
+    text-align: center;
+    color: white;
+    
+  }
+
+  /* ... (other styles remain unchanged) ... */
+
+  /* Styled heading */
+  .centered-heading {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  /* Styled paragraph */
+  .centered-paragraph {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%; /* Adjust the width as needed */
+    font-size: 1.2em;
+    line-height: 1.5;
+  }

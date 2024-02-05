@@ -73,7 +73,9 @@
     font-size:15px;
    
     padding: 5px;
+    padding-bottom:20px;
 }
+
 
 .fa-facebook{
     line-height: 30px;
@@ -98,6 +100,7 @@
 .pa{
     font-size:20px;
     margin-bottom: 10px;
+    color:#FFF;
 }
 @media screen and (max-width: 767px) {
     .box {

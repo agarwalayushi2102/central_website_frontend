@@ -1,6 +1,6 @@
 import React from 'react'
 import './Card.css'
-const Cards = () => {
+const Card = () => {
   return (
     <div className="body">
       <div className="wrap">
@@ -53,4 +53,4 @@ const Cards = () => {
   )
 }
 
-export default Cards
+export default Card

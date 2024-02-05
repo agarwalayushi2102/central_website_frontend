@@ -1,33 +1,39 @@
-"use client"
-import React, { useState } from 'react'
+"use client";
+import styles from './Navbar.module.css'
+import React, { useState } from 'react';
 
-const footer = () => {
-const [facebook, setFacebook] = useState('#')
-const [twitter, settwitter] = useState('#')
-const [google, setgoogle] = useState('#')
-const [instagram, setinstagram] = useState('#')
-const [linkedin, setlinkedin] = useState('#')
-const [youtube, setyoutube] = useState('#')
+const Footer = () => {
+  const [facebook, setFacebook] = useState('#');
+  const [twitter, setTwitter] = useState('#');
+  const [google, setGoogle] = useState('#');
+  const [instagram, setInstagram] = useState('#');
+  const [linkedin, setLinkedin] = useState('#');
+  const [youtube, setYoutube] = useState('#');
+  let [open, setOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setOpen(!open);
+  };
+  const currentColor="blue";
 
   return (
     <>
-      <div  className='relative bottom-0 h-60 w-full bg-[#121212] text-white border-b-8 border-black p-2 max-[280px]:h-72'  >
-      <div className="flex justify-center items-center mt-2">
-          <div className="rounded-full overflow-hidden   w-20 h-20">
-            <img
-              src="https://media-exp1.licdn.com/dms/image/C510BAQFbp4mBzmTaFw/company-logo_200_200/0/1582205319278?e=2147483647&v=beta&t=u3PIgLO9UashWYyjokBiy2yoWHCo8wKMvBc8_c5q_3g" // Replace with the actual URL of the circular image
-              alt="Circular Image"
-              className="w-full h-full object-cover"
-            />
+      <header>
+      <div className={`${styles.gavbar} ${open ? styles.open : ''}`}>
+        <div className={styles.f}>
+          <div>
+            <img src="https://media-exp1.licdn.com/dms/image/C510BAQFbp4mBzmTaFw/company-logo_200_200/0/1582205319278?e=2147483647&v=beta&t=u3PIgLO9UashWYyjokBiy2yoWHCo8wKMvBc8_c5q_3g" />
+          </div>
+          <div className={styles.ga}>
+           Cynaptics Club
           </div>
         </div>
-        <h1 className='text-center text-3xl mt-2 font-bold'>Cynaptics Club</h1>
-        <p className='text-center text-xl mt-2 font-regular'>IIT Indore</p>
-        
-        {/* Social media links */}
+
+        <div className={`${styles.link} ${open ? styles.show : ''}`}>
+          {/* Social media links */}
         <div className='flex justify-center mt-4'>
           {/* facebook */}
-         <a href={facebook} className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black '> <span > <svg
+         <a href={facebook} className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black mb-3  text-white'> <span > <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
             fill="currentColor"
@@ -38,7 +44,7 @@ const [youtube, setyoutube] = useState('#')
           </span>
           </a>
           {/* twitter */}
-          <a href={twitter} className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black'><span >
+          <a href={twitter} className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black mb-3  text-white'><span >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -50,7 +56,7 @@ const [youtube, setyoutube] = useState('#')
           </span>
           </a>
           {/* Google  */}
-         <a href={google}  className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black'> <span  >
+         <a href={google}  className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black mb-3 text-white'> <span  >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -63,7 +69,7 @@ const [youtube, setyoutube] = useState('#')
           </span>
           </a>
           {/* Instagram */}
-          <a href={instagram} className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black'><span >
+          <a href={instagram} className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black mb-3  text-white'><span >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -75,7 +81,7 @@ const [youtube, setyoutube] = useState('#')
           </span>
           </a>
           {/* Linkedin */}
-          <a href={linkedin} className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black'><span >
+          <a href={linkedin} className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black mb-3  text-white'><span >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -87,7 +93,7 @@ const [youtube, setyoutube] = useState('#')
           </span>
           </a>
           {/* Youtube */}
-          <a href={youtube} className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black'><span  >
+          <a href={youtube} className='mx-2 p-1 border-2 rounded-full cursor-pointer hover:text-black hover:bg-white hover:border-black mb-3  text-white'><span  >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -100,10 +106,17 @@ const [youtube, setyoutube] = useState('#')
           </a>
         </div>
 
+        </div>
 
+        <button className={styles.hamburger} onClick={toggleMenu}>
+          <div className={`${styles.bar} ${open ? styles.rotateTopBar : ''}`} />
+          <div className={`${styles.bar} ${open ? styles.hideMiddleBar : ''}`} />
+          <div className={`${styles.bar} ${open ? styles.rotateBottomBar : ''}`} />
+        </button>
       </div>
+    </header>
     </>
-  )
-}
+  );
+};
 
-export default footer
+export default Footer;
