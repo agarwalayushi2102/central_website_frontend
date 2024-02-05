@@ -1,7 +1,6 @@
 import React from 'react'
 import './Imgtext.css'
-import wideImage from '../models/wideImage';
-const WideImage = () => {
+const Imgtext = () => {
   return (
     <div>
       <div className="container">
@@ -16,4 +15,5 @@ const WideImage = () => {
     </div>
   )
 }
-export default wideImage;
+export default Imgtext;
+

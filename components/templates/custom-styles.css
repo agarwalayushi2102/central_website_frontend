@@ -1,0 +1,28 @@
+/* custom-styles.css */
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: rgb(200, 188, 188);
+  color: white; /* Optional: Change text color if needed */
+  border-radius: 50%; /* Make it a circle */
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  font-size: 18px; /* Optional: Adjust font size */
+  line-height: 1.5; /* Optional: Adjust line height */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 70px;
+  margin-right:70px;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
