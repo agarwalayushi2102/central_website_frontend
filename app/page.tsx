@@ -3,7 +3,12 @@ import react from 'react'
 import Navbar from "../components/navbar"
 import Sidebar from "../components/sidebar"
 import Preview from "../components/preview"
+// import Imgtext from "../components/Imgtext"
+// import Card from "../components/Card"
 
+// import MainForm from "../components/MainForm"
+// import Carousels from "../components/templates/Carousels"
+// import About from "../components/templates/About"
 
 
 
@@ -24,7 +29,14 @@ export default function Home() {
         <Template1/>
         <Template2/> */}
         <div className='col-span-4'>
+          <h1 className='text-3xl font-semibold pl-8 pt-4 bg-[#ECECEC]'>Preview</h1>
           <Preview/>
+          {/* <About/>
+          <Carousels/> */}
+          {/* <Imgtext/>
+          <Carousels/>
+          <MainForm/>
+          <Card/> */}
         </div>
       
     </div>

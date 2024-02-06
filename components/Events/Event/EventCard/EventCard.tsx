@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Style from "./EventCard.module.css";
 
-const EventCard = (props) => {
+const EventCard = (props:any) => {
   const event = props.event;
   return (
     <>

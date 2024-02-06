@@ -14,9 +14,9 @@ const HeroSection = () => {
             <h1 className={styles.subTitle}>Cynaptics Club</h1> 
             </div>
             <div className={styles.textContainer}>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-               Lorem Ipsum has been the industry's   </p>
-                <p>dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it  </p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+               Lorem Ipsum has been the industry's  
+               dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 
             </div>
             </div>
         

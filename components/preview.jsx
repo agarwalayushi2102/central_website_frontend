@@ -9,12 +9,12 @@ import Footer from './Footer'
 
 const preview = () => {
   return (
-    <div className='m-0 p-6 bg-[#ECECEC]'>
+    <div className='m-0 p-16 pt-6 bg-[#ECECEC]'>
         <Nav/>
         <Hero/>
         <Events/>
         <Members/>
-        <Projects/>
+        
         <Contact/>
         <Footer/>
     </div>
