@@ -1,16 +1,21 @@
 import React from 'react'
 import '../../app/globals.css'
+import { useSession, signIn, signOut, SessionProvider } from 'next-auth/react';
 
 
 
 export default function login() {
+
+  const { data : session, status } = useSession();
+
   return (
+    <SessionProvider session={session}>
     <div className='flex h-[100vh] w-[100vw] bg-[rgb(33,11,98)] items-center '>
       <div className='flex flex-col  h-[75vh] max-h-[35rem] w-[90%] max-w-[30rem] mx-auto bg-white rounded-lg items-center shadow-md shadow-current'>
         <img src='/gymkhana.jpg' height='150' width='120' className='rounded-full mt-16'></img>
         <h1 className='text-2xl mt-4 font-semibold text-center'>Hey, good to see you again!</h1>
         <p className='text-sm font-thin text-gray-500'>Login to get going</p>
-
+        <button onClick={()=> signIn()}>
         <div className='flex flex-row w-[75%] h-12 border-2 mt-8 text-sm p-1' id='sign-in'> Sign in as
           <span className=' w-2 h-2'>
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" className='w-6 h-6' viewBox="0 0 48 48">
@@ -18,6 +23,7 @@ export default function login() {
             </svg>
           </span>
         </div>
+        </button> 
         <hr className='w-[80%] mt-3 border-gray-300' />
         <div className='flex flex-row mt-3'>
           <span>
@@ -31,5 +37,6 @@ export default function login() {
         <p className='mt-3 text-gray-400 font-semibold text-md'>Please Use College Id</p>
       </div>
     </div>
+    </SessionProvider>
   )
 }
