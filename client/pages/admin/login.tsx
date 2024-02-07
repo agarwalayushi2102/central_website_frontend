@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../../app/globals.css'
+import { useRouter } from 'next/router';
 import { useSession, signIn, signOut, SessionProvider } from 'next-auth/react';
 
 
@@ -7,6 +8,18 @@ import { useSession, signIn, signOut, SessionProvider } from 'next-auth/react';
 export default function login() {
 
   const { data : session, status } = useSession();
+  const router = useRouter();
+
+  useEffect(()=> {
+    if(session){
+      //redirect to homepage
+      router.push({
+        pathname: "/",
+      });
+    }
+  })
+
+  
 
   return (
     <SessionProvider session={session}>
