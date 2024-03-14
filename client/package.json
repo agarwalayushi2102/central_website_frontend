@@ -13,10 +13,11 @@
     "bootstrap": "^5.3.2",
     "flowbite-react": "^0.7.2",
     "next": "14.1.0",
-    "next-auth": "^4.24.5",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-bootstrap": "^2.10.0",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "session": "^0.1.0"
   },
   "devDependencies": {
     "@types/node": "^20",

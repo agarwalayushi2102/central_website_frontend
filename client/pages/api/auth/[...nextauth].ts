@@ -1,6 +1,18 @@
-import NextAuth from "next-auth";
+// pages/api/auth/[...nextauth].js
+import NextAuth, { ISODateString } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { googlelogin } from "../../../components/api/index";
+import {JWT} from 'next-auth/jwt'
+
+export type CustomSession = {
+    user ?: CustomUser;
+    expires: ISODateString;
+}
+
+export type CustomUser = {
+    email?: string | null;
+    token?: string | null;
+}
 
 export default NextAuth({
     providers: [
@@ -19,31 +31,45 @@ export default NextAuth({
             },
         }),
     ],
-    
-    secret: process.env.NEXTAUTH_SECRET as string,
-    callbacks: {
-        async jwt({ token, account, user } : any) {
-            console.log(process.env.NEXTAUTH_SECRET)
-                console.log(user);
-                console.log(account);
-                console.log(token);
 
-                googlelogin({
-                    emailId : user.email
-                }).then(response => {
-                    console.log(response)
-                    if (response.status === 201) {
-                        localStorage.setItem('token', response.data.authData.token)
-                        // dispatch(loginAdmin())
-                    }
-                })
+    secret: process.env.NEXTAUTH_SECRET as string,
+
+    callbacks: {
+        async signIn({user} : {user: CustomUser}){
+           
+            const response = await googlelogin({
+                emailId : user.email
+            })
+
+            if(response.status === 201){
+                user.token = response.data.authData.token;
+                // console.log(user)
+                return true;
+            }else{
+                return false;
+            }
         },
 
-        async session({ session, token }: any) {
-            session.accessToken = token.accessToken;
-            session.idToken = token.idToken;
-            session.oktaId = token.oktaId;
+        async jwt({user, token} : {user : CustomUser, token: JWT}){
+            console.log(user)
+
+            if(user !== undefined){
+                token.user = user;
+            }
+            
+            console.log(token)    
+            return token;
+        },
+
+        async session({session, user, token } : {session : CustomSession ,user : CustomUser, token: JWT}) {
+           
+
+           session.user = token.user as CustomUser
+
+           console.log(session);
+
             return session;
-        }
+          },
+
     },
 });

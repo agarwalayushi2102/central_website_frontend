@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../../app/globals.css'
 import { useRouter } from 'next/router';
 import { useSession, signIn, signOut, SessionProvider } from 'next-auth/react';
@@ -7,17 +7,29 @@ import { useSession, signIn, signOut, SessionProvider } from 'next-auth/react';
 
 export default function login() {
 
-  const { data : session, status } = useSession();
+  const { data : session , status } = useSession();
   const router = useRouter();
 
-  useEffect(()=> {
-    if(session){
-      //redirect to homepage
+  if (status === 'loading') {
+    console.log("loading");
+  }
+
+  if (status === 'authenticated') {
+
+    console.log("authenticated")
+    const token = session?.user?.token;
+
+    if (token) {
+      console.log(session); 
+      localStorage.setItem('token', token);
+      
       router.push({
         pathname: "/",
       });
+    } else {
+      console.warn('No token found in session');
     }
-  })
+  }
 
   
 
