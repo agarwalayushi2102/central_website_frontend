@@ -15,3 +15,13 @@ export const setContentVersionAdmin = () => async (dispatch) => {
         dispatch({type:"ADMIN_LOGOUT"})
     }
 }
+
+export const updateContentVersion = (updatedContentVersion) => async (dispatch) => {
+    try{
+        await api.updateContentVersion(updatedContentVersion)
+        dispatch({type:"UPDATE_CONTENT_VERSION",payload:updatedContentVersion})
+    }
+    catch(error){
+        console.log(error)
+    }
+}

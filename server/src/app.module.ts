@@ -28,6 +28,7 @@ export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
       consumer
         .apply(AdminAuthMiddleware)
-        .forRoutes({ path: 'api/admin*', method : RequestMethod.ALL});
+        .forRoutes({ path: 'api/admin*', method : RequestMethod.ALL},
+        { path: 'api/users/admin*', method : RequestMethod.ALL},);
     }
 }

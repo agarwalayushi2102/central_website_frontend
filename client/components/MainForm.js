@@ -4,30 +4,48 @@ import UserNameEmail from './UserNameEmail'
 import DobGender from './DobGender'
 import Address from './Address'
 
+import { Grid, useTheme, useMediaQuery } from "@material-ui/core";
+import { useDispatch , useSelector } from "react-redux";
+import { updateContentVersion } from "../components/redux/actions/contentVersion";
+
 const MainForm = () => {
-    const [data, setData] = useState({
-        name: "",
-        email: "",
-        dob: "",
-        gender: "male",
-        address: "",
-    })
+    // const [data, setData] = useState({
+    //     name: "",
+    //     email: "",
+    //     dob: "",
+    //     gender: "male",
+    //     address: "",
+    // })
 
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setData({
-            ...data,
-            [name]: value,
-        });
-    };
+    // const handleChange = (event) => {
+    //     const { name, value } = event.target;
+    //     setData({
+    //         ...data,
+    //         [name]: value,
+    //     });
+    // };
 
-    const [activeTab, setActiveTab] = useState(0)
+//const theme = useTheme();
+//  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
+const [activeTab, setActiveTab] = useState(0);
+const contentVersion = useSelector((state) => state.contentVersion);
+const [userProfile, setUserProfile] = useState(contentVersion || {});
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
+    console.log("Saving user profile ",userProfile)
+    dispatch(updateContentVersion(userProfile));
+  }
     const formElements = [
-        <UserNameEmail data={data} handleChange={handleChange} />,
-        <DobGender data={data} handleChange={handleChange} />,
-        <Address data={data} setData={setData} />
+        <UserNameEmail userProfile={userProfile} setUserProfile={setUserProfile} handleSubmit={handleSubmit}/>,
+        // <DobGender data={data} handleChange={handleChange} />,
+        // <Address data={data} setData={setData} />
     ]
+
+
+
 
     return (
         <div className='min-h-screen flex flex-col justify-center bg-white'>
